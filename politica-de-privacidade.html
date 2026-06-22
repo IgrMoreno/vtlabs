@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Política de Privacidade - VTLabs</title>
+    <style>
+      :root{
+        --bg:#0f1724;
+        --card:#0b1220;
+        --muted:#9aa4b2;
+        --accent:#7c3aed;
+        --glass: rgba(255,255,255,0.03);
+      }
+      html,body{height:100%;}
+      body{
+        margin:0;
+        background:linear-gradient(180deg,#071025 0%, #0f1724 100%);
+        color:#e6eef8;
+        font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        line-height:1.6;
+        -webkit-font-smoothing:antialiased;
+        -moz-osx-font-smoothing:grayscale;
+      }
+      .container{max-width:1100px;margin:0 auto;padding:40px 20px;}
+      header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+      .brand{display:flex;align-items:center;gap:12px}
+      .logo{width:44px;height:44px;background:linear-gradient(135deg,var(--accent),#06b6d4);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff}
+      nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+      nav a:hover{color:#fff}
+      .hero{display:flex;gap:32px;align-items:center;padding:48px 0}
+      .hero .left{flex:1}
+      .eyebrow{color:var(--accent);font-weight:700;margin-bottom:10px}
+      h1{font-size:clamp(1.5rem,3.5vw,2.25rem);margin:0;color:#fff}
+      p.lead{color:var(--muted);margin-top:12px}
+      .hero .actions{margin-top:20px;display:flex;gap:12px}
+      .btn{background:var(--accent);color:#fff;padding:12px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+      .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--muted)}
+
+      main article.card{background:var(--card);border-radius:14px;padding:32px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+      h2.section{color:#fff;margin-top:32px}
+      .muted{color:var(--muted)}
+      ul{padding-left:18px}
+      .notice{background:linear-gradient(90deg, rgba(124,58,237,0.08), rgba(6,182,212,0.03));padding:12px;border-radius:8px;border-left:4px solid var(--accent);color:#fff}
+      footer{padding:28px 0;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+      .small{font-size:0.95rem}
+
+      /* responsive */
+      @media (max-width:800px){
+        .hero{flex-direction:column;align-items:flex-start}
+        nav a{margin-left:12px}
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="brand">
+          <div class="logo">VT</div>
+          <div>
+            <div style="font-weight:800">VTLabs</div>
+            <div style="font-size:0.85rem;color:var(--muted)">Laboratório de soluções digitais</div>
+          </div>
+        </div>
+        <nav>
+          <a href="/">Início</a>
+          <a href="/#sobre">Sobre</a>
+          <a href="/#solucoes">Soluções</a>
+          <a href="/#aplicativos">Aplicativos</a>
+          <a href="/politica-de-privacidade">Privacidade</a>
+          <a href="/#contato">Contato</a>
+        </nav>
+      </header>
+
+      <main>
+        <article class="card">
+          <div class="eyebrow">SOANE Visual Trends Lab</div>
+          <h1>Política de Privacidade</h1>
+          <p class="muted">Última atualização: 22 de junho de 2026</p>
+
+          <div style="margin-top:16px;" class="notice">
+            Esta política descreve como o SOANE Visual Trends Lab trata dados durante o uso de uma ferramenta interna de análise de tendências visuais. O aplicativo não publica Pins, não automatiza publicações e opera apenas com dados autorizados por APIs oficiais.
+          </div>
+
+          <h2 class="section">1. Sobre o aplicativo</h2>
+          <p>
+            O SOANE Visual Trends Lab é uma ferramenta de análise usada para estudar tendências, palavras-chave, intenção de busca visual e oportunidades de conteúdo a partir de dados autorizados pelas plataformas. Nossa abordagem prioriza controle humano e transparência no tratamento de dados.
+          </p>
+
+          <h2 class="section">2. Dados que podem ser tratados</h2>
+          <ul>
+            <li>Palavras-chave e tendências retornadas pela API do Pinterest.</li>
+            <li>Métricas agregadas de crescimento, interesse ou desempenho quando fornecidas pela API.</li>
+            <li>Filtros escolhidos pelo usuário, como região, tipo de tendência e limite de resultados.</li>
+            <li>Arquivos exportados localmente em CSV, JSON ou Markdown.</li>
+            <li>Token de acesso do Pinterest, quando configurado pelo próprio usuário em ambiente local.</li>
+          </ul>
+
+          <h2 class="section">3. Dados que não coletamos</h2>
+          <ul>
+            <li>Senhas do Pinterest.</li>
+            <li>Dados financeiros.</li>
+            <li>Dados sensíveis de usuários.</li>
+            <li>Conteúdo privado de contas Pinterest.</li>
+            <li>Informações de navegação fora do uso autorizado da API.</li>
+          </ul>
+
+          <h2 class="section">4. Como os dados são usados</h2>
+          <ul>
+            <li>Visualizar tendências do Pinterest.</li>
+            <li>Classificar intenção visual de palavras-chave.</li>
+            <li>Calcular scores exploratórios de oportunidade visual.</li>
+            <li>Gerar gráficos e relatórios internos.</li>
+            <li>Exportar resultados para análise futura.</li>
+          </ul>
+
+          <h2 class="section">5. Compartilhamento de dados</h2>
+          <p>
+            O SOANE Visual Trends Lab não vende, aluga ou compartilha dados pessoais com terceiros. Dados exportados pelo usuário ficam sob responsabilidade do próprio usuário e são destinados apenas ao seu uso.
+          </p>
+
+          <h2 class="section">6. Armazenamento</h2>
+          <p>
+            O aplicativo pode salvar arquivos locais de exportação. O token de acesso, quando usado, deve ser armazenado pelo usuário em arquivo de ambiente local e não em repositórios públicos.
+          </p>
+
+          <h2 class="section">7. Uso da API do Pinterest</h2>
+          <p>
+            Quando configurado com um token válido, o aplicativo acessa endpoints oficiais da API do Pinterest para consulta de tendências. O uso segue as políticas e limitações da API.
+          </p>
+
+          <h2 class="section">8. Publicação de conteúdo</h2>
+          <p>
+            O aplicativo não cria, agenda, publica, edita ou remove Pins automaticamente. Qualquer funcionalidade de publicação exige ação explícita do usuário e consentimento apropriado.
+          </p>
+
+          <h2 class="section">9. Segurança</h2>
+          <p>
+            Recomendamos que tokens, chaves e credenciais sejam mantidos em arquivos de ambiente locais, fora de repositórios públicos. O usuário é responsável por proteger suas próprias credenciais.
+          </p>
+
+          <h2 class="section">10. Direitos e solicitações</h2>
+          <p>
+            Caso você tenha dúvidas sobre esta política ou queira solicitar remoção de dados exportados sob controle da SOANE, entre em contato pelo canal oficial informado pela organização.
+          </p>
+
+          <h2 class="section">11. Alterações nesta política</h2>
+          <p>
+            Esta política pode ser atualizada para refletir mudanças no aplicativo, nos requisitos da API do Pinterest ou em práticas internas de privacidade.
+          </p>
+
+          <footer style="margin-top:22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap">
+            <div>
+              <strong>Contato:</strong> contato@vtlabs.com.br
+            </div>
+            <div style="color:var(--muted)">© 2026 VTLabs. Todos os direitos reservados.</div>
+          </footer>
+        </article>
+      </main>
+    </div>
+  </body>
+</html>
