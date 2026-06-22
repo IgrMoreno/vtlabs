@@ -3,65 +3,202 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Visual Trends Labs</title>
+    <title>Dashboard de Análise de Trends - VTLabs</title>
     <style>
-      body {
-        margin: 0;
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-        background: #f8fafc;
-        color: #1f2328;
-        font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      :root{
+        --bg:#0f1724;
+        --card:#0b1220;
+        --muted:#9aa4b2;
+        --accent:#7c3aed;
+        --glass: rgba(255,255,255,0.03);
       }
-      main {
-        max-width: 720px;
-        margin: 24px;
-        padding: 40px;
-        background: #fff;
-        border: 1px solid #d0d5dd;
-        border-radius: 16px;
-        box-shadow: 0 16px 40px rgba(16, 24, 40, 0.06);
+      html,body{height:100%;}
+      body{
+        margin:0;
+        background:linear-gradient(180deg,#071025 0%, #0f1724 100%);
+        color:#e6eef8;
+        font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        line-height:1.6;
+        -webkit-font-smoothing:antialiased;
+        -moz-osx-font-smoothing:grayscale;
       }
-      .eyebrow {
-        color: #e60023;
-        font-weight: 700;
-        margin-bottom: 12px;
-      }
-      h1 {
-        margin: 0 0 12px;
-        font-size: clamp(2rem, 5vw, 3.2rem);
-        line-height: 1.05;
-      }
-      p {
-        color: #667085;
-        line-height: 1.65;
-        font-size: 1.05rem;
-      }
-      a {
-        display: inline-block;
-        margin-top: 20px;
-        padding: 12px 18px;
-        border-radius: 10px;
-        background: #e60023;
-        color: #fff;
-        text-decoration: none;
-        font-weight: 700;
-      }
-      a:hover {
-        background: #c9001f;
+      .container{max-width:1100px;margin:0 auto;padding:40px 20px;}
+      header{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+      .brand{display:flex;align-items:center;gap:12px}
+      .logo{width:44px;height:44px;background:linear-gradient(135deg,var(--accent),#06b6d4);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff}
+      nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+      nav a:hover{color:#fff}
+      .hero{display:flex;gap:32px;align-items:center;padding:48px 0}
+      .hero .left{flex:1}
+      .eyebrow{color:var(--accent);font-weight:700;margin-bottom:10px;text-transform:uppercase;font-size:0.85rem;letter-spacing:0.5px}
+      h1{font-size:clamp(1.5rem,3.5vw,2.25rem);margin:0;color:#fff}
+      p.lead{color:var(--muted);margin-top:12px;font-size:1.1rem}
+      .hero .actions{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap}
+      .btn{background:var(--accent);color:#fff;padding:12px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:700;text-decoration:none;display:inline-block;transition:all 0.3s}
+      .btn:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(124,58,237,0.3)}
+      .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--muted)}
+      .btn.ghost:hover{background:rgba(255,255,255,0.04);color:#fff}
+
+      main{padding:32px 0}
+      .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-bottom:32px}
+      article.card{background:var(--card);border-radius:14px;padding:32px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 8px 30px rgba(2,6,23,0.6);transition:all 0.3s}
+      article.card:hover{border-color:rgba(124,58,237,0.2);transform:translateY(-4px)}
+      .card h2{margin-top:0;color:#fff;font-size:1.3rem}
+      .card-icon{font-size:2.5rem;margin-bottom:12px}
+      .muted{color:var(--muted)}
+      .notice{background:linear-gradient(90deg, rgba(124,58,237,0.08), rgba(6,182,212,0.03));padding:16px;border-radius:8px;border-left:4px solid var(--accent);color:#fff;margin:24px 0}
+
+      .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:32px 0}
+      .feature-item{display:flex;gap:12px;padding:12px 0}
+      .feature-item::before{content:'✓';color:var(--accent);font-weight:700;font-size:1.2rem;flex-shrink:0}
+
+      footer{padding:28px 0;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(255,255,255,0.04);margin-top:48px}
+      .small{font-size:0.95rem}
+      footer a{color:var(--accent);text-decoration:none}
+      footer a:hover{text-decoration:underline}
+
+      /* responsive */
+      @media (max-width:800px){
+        .hero{flex-direction:column;align-items:flex-start}
+        nav a{margin-left:12px;font-size:0.9rem}
+        header{flex-direction:column;align-items:flex-start;gap:16px}
       }
     </style>
   </head>
   <body>
-    <main>
-      <div class="eyebrow">SOANE</div>
-      <h1>Visual Trends Lab</h1>
-      <p>
-        Ferramenta interna para análise de tendências visuais, palavras-chave
-        e intenção de busca em conteúdos do Pinterest.
-      </p>
-      <a href="./politica-de-privacidade.html">Ver Política de Privacidade</a>
-    </main>
+    <div class="container">
+      <header>
+        <div class="brand">
+          <div class="logo">VT</div>
+          <div>
+            <div style="font-weight:800">VTLabs</div>
+            <div style="font-size:0.85rem;color:var(--muted)">Laboratório de soluções digitais</div>
+          </div>
+        </div>
+        <nav>
+          <a href="/">Dashboard</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#recursos">Recursos</a>
+          <a href="#comeco">Começar</a>
+          <a href="./politica-de-privacidade.html">Privacidade</a>
+        </nav>
+      </header>
+
+      <main>
+        <!-- Hero Section -->
+        <section class="hero">
+          <div class="left">
+            <div class="eyebrow">Soane Visual Trends Lab</div>
+            <h1>Análise de Tendências Visuais em Tempo Real</h1>
+            <p class="lead">Descubra palavras-chave, tendências visuais e oportunidades de conteúdo com inteligência de dados do Pinterest.</p>
+            <div class="actions">
+              <button class="btn">Acessar Dashboard</button>
+              <button class="btn ghost">Documentação</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Features Grid -->
+        <section id="recursos" style="margin-top:48px">
+          <div class="eyebrow" style="text-align:center">Recursos Principais</div>
+          <h2 style="text-align:center;color:#fff;margin-bottom:32px">Tudo o que você precisa para análise visual</h2>
+          
+          <div class="grid">
+            <article class="card">
+              <div class="card-icon">📊</div>
+              <h2>Análise de Tendências</h2>
+              <p class="muted">Acompanhe tendências visuais em tempo real, identifique padrões emergentes e antecipe oportunidades de mercado com dados do Pinterest.</p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">🔍</div>
+              <h2>Pesquisa de Palavras-chave</h2>
+              <p class="muted">Descubra palavras-chave relevantes, volume de buscas, intenção visual e oportunidades de conteúdo em uma única plataforma.</p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">📈</div>
+              <h2>Scoring Visual</h2>
+              <p class="muted">Calcule scores de oportunidade com base em métricas de crescimento, interesse e desempenho visual dos seus tópicos.</p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">💾</div>
+              <h2>Exportação de Dados</h2>
+              <p class="muted">Exporte análises em CSV, JSON ou Markdown. Integre dados em seus fluxos de trabalho e processos de análise internos.</p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">🌍</div>
+              <h2>Filtros Regionais</h2>
+              <p class="muted">Analise tendências por região, país e idioma. Customize pesquisas conforme seu mercado e público-alvo específico.</p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">🔒</div>
+              <h2>Privacidade Garantida</h2>
+              <p class="muted">Seus dados são armazenados localmente. Nós não publicamos Pins, não compartilhamos credenciais e respeitamos sua privacidade.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- How it Works -->
+        <section id="comeco" style="margin-top:48px">
+          <article class="card">
+            <div class="eyebrow">Primeiros Passos</div>
+            <h2>Como Começar</h2>
+            
+            <div class="features">
+              <div class="feature-item">
+                <span>Configure seu token de acesso do Pinterest em arquivo .env local</span>
+              </div>
+              <div class="feature-item">
+                <span>Acesse o dashboard e insira as palavras-chave que deseja analisar</span>
+              </div>
+              <div class="feature-item">
+                <span>Defina filtros de região, tipo de tendência e limite de resultados</span>
+              </div>
+              <div class="feature-item">
+                <span>Visualize gráficos, análises e scores de oportunidade em tempo real</span>
+              </div>
+              <div class="feature-item">
+                <span>Exporte resultados em seu formato preferido (CSV, JSON, Markdown)</span>
+              </div>
+              <div class="feature-item">
+                <span>Integre dados em suas ferramentas de análise e estratégia de conteúdo</span>
+              </div>
+            </div>
+
+            <div class="notice">
+              <strong>🔐 Importante sobre Segurança:</strong> Nunca compartilhe seu token de acesso do Pinterest em repositórios públicos. Mantenha credenciais em arquivos .env locais. Leia nossa <a href="./politica-de-privacidade.html" style="color:var(--accent);text-decoration:underline">Política de Privacidade</a> para mais detalhes.
+            </div>
+          </article>
+        </section>
+
+        <!-- About Section -->
+        <section id="sobre" style="margin-top:48px">
+          <article class="card">
+            <div class="eyebrow">Sobre o Projeto</div>
+            <h2>Soane Visual Trends Lab</h2>
+            <p>
+              O Soane Visual Trends Lab é uma ferramenta de análise especialmente desenvolvida para estudar tendências, palavras-chave, intenção de busca visual e oportunidades de conteúdo a partir de dados autorizados da API do Pinterest.
+            </p>
+            <p>
+              Criada pelo laboratório VTLabs, esta solução permite que estrategistas de conteúdo, profissionais de marketing visual e pesquisadores entendam melhor o comportamento de busca visual e identifiquem oportunidades de negócio em tempo real.
+            </p>
+            <p>
+              O aplicativo é projetado com foco em <strong>privacidade</strong>, <strong>segurança</strong> e <strong>análise responsável</strong>. Nós não publicamos Pins, não armazenamos dados sensíveis e respeitamos completamente as políticas da API do Pinterest.
+            </p>
+          </article>
+        </section>
+      </main>
+
+      <footer>
+        <div>
+          <strong>VTLabs</strong> · <a href="./politica-de-privacidade.html">Política de Privacidade</a> · <a href="mailto:contato@vtlabs.com.br">Contato</a>
+        </div>
+        <div style="color:var(--muted)">© 2026 VTLabs. Todos os direitos reservados.</div>
+      </footer>
+    </div>
   </body>
 </html>
